@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+
+        $.getJSON("http://localhost:5050/api/Users")
+            .done(
+                (res) => {
+                    console.log(res);
+                }
+            )
+            .fail(
+                (err) => {
+                console.error(err);
+            });
+
+
+
+
+
+        // let http = new XMLHttpRequest();     Without Jquery
+        // http.open("GET","http://localhost:5050/api/Users");
+        // http.onload = () => {
+        //     getJson(http.response)
+        // }
+        // http.responseType = "json";
+        // http.send();
+
+        const getJson = (res) => {
+            for(let u of res){
+                console.log(u.username);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

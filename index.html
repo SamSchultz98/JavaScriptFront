@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script lang="javascript">
+
+
+
+        let loaded = () => {
+            let inputCtrl = document.getElementById("inp"); //States that once the body is fully loaded to run this
+            inputCtrl.value="BOOTCAMP";
+
+        }
+
+        let copy = () => {
+           let inputCtrl = document.getElementById("inp");
+           let value = inputCtrl.value; //Value is whatever is in the box 
+           let labelCtrl = document.getElementById("lbl");
+           labelCtrl.innerHTML = `<i>${value}</i>`;     //Must have back tick (`) to use interpolated strings
+           labelCtrl.style.color = "blue";
+        }
+
+    </script>
+</head>
+<body onload="loaded()">
+    <div>
+        <input id="inp">    <!-- auto makes a box-->     
+        <button onclick="copy()">copy it!</button>
+        <label id="lbl"></label>
+        <!-- <script lang="javascript">
+                let inputCtrl = document.getElementById("inp"); //This is another way of doing the ONLOAD style of funciton
+                inputCtrl.value="BOOTCAMP";
+        </script> -->
+        
+    </div>
+</body>
+</html>

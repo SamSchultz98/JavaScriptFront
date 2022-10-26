@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter</title>
+    <script lang="javascript">
+
+        let loaded = () =>{
+            inptCtrl = document.getElementById("inpt");
+            inptCtrl.value = 0;
+        }
+
+
+        let subtract = () =>{
+            inptCtrl = document.getElementById("inpt");
+            let value = inptCtrl.value;
+            inptCtrl.value = (value - 1);
+            style();
+        }
+
+        let addition = () =>{
+            inptCtrl = document.getElementById("inpt");
+            let value = inptCtrl.value;
+            inptCtrl.value = 1+(value * 1);
+            style();
+        }
+
+        let style = () =>{
+            let value = inptCtrl.value * 1;
+            if(value % 2 == 0){
+                inptCtrl.style.color = "red";
+            }
+            if(value % 2 != 0){
+                inptCtrl.style.color = "black";
+            }
+            if(value % 3 == 0){
+                inptCtrl.style.fontWeight = "bolder";
+            }
+            if(value % 3 != 0){
+                inptCtrl.style.fontWeight="normal";
+            }
+            if(value % 5 == 0){
+                inptCtrl.style.fontStyle="italic"
+            }
+            if(value % 5 != 0){
+                inptCtrl.style.fontStyle="normal"
+            }
+        }
+
+    </script>
+</head>
+<body onload="loaded()">
+    <button onclick="subtract()">-</button>
+    <input id="inpt" readonly >
+    <button onclick="addition()">+</button>
+</body>
+</html>
